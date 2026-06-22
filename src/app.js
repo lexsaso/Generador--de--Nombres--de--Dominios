@@ -1,34 +1,23 @@
-import "bootstrap";
-import "./style.css";
-
-
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-
-window.onload = function () {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
-
-// 1. Definimos las listas de palabras (puedes añadir las que quieras)
 let pronoun = ['the', 'our'];
 let adj = ['great', 'big'];
 let noun = ['jogger', 'racoon'];
 let extensions = ['.com', '.net', '.us', '.io'];
 
+// 1. A la palabra de esta vuelta la llamamos "pronombreDeLaLista"
+pronoun.forEach(function (pronombreDeLaLista) {
 
-for (let i = 0; i < pronoun.length; i++) {
+  // 2. A la palabra de esta vuelta la llamamos "adjetivoDeLaLista"
+  adj.forEach(function (adjetivoDeLaLista) {
 
-  for (let j = 0; j < adj.length; j++) {
+    // 3. A la palabra de esta vuelta la llamamos "sustantivoDeLaLista"
+    noun.forEach(function (sustantivoDeLaLista) {
 
-    for (let k = 0; k < noun.length; k++) {
+      // Juntamos las tres palabras que tenemos en la mano en este momento
+      let baseDomain = pronombreDeLaLista + adjetivoDeLaLista + sustantivoDeLaLista;
 
-      for (let l = 0; l < extensions.length; l++) {
-
-        let domainName = pronoun[i] + adj[j] + noun[k] + extensions[l];
-
-        console.log(domainName);
-      }
-    }
-  }
-}
+      // 4. Recorremos las extensiones y las imprimimos con UN SOLO console.log que se ejecuta por cada una
+      extensions.forEach(function (extensionDeLaLista) {
+        console.log(baseDomain + extensionDeLaLista);
+      });
+    });
+  });
